@@ -1,0 +1,15 @@
+.plats {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.plats img {
+    width: 100px;
+    height: auto;
+}
+
+.plats h4 {
+    display: inline;
+}
