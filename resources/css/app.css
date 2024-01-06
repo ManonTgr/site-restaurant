@@ -1,3 +1,13 @@
+body { 
+    margin: 0px;
+    padding: 0px;
+    background-color: aquamarine;
+    background-image: url(images/keesha-s-kitchen-eaSIzdS8pv0-unsplash.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .plats {
     display: flex;
     list-style: none;

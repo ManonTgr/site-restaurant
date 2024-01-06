@@ -20,7 +20,37 @@
             </ul>
         </nav>
     </header>
+*/test/*
+
+    <header>
+    <div class="float">
+      <div>
+        <a href="menu.html"><img src="images/O CNAMO(3).png" alt="Chemin de randonnée au milieu des montagnes"
+            title="Cliquez pour agrandir"></a>
+      </div>
+      <div>
+        <h2>O Cnamo </h2>
+      </div>
+
+      <nav>
+        <div class="profil">
+        <ul>
+          <li class="menu-deroulant">
+            <a href="#">Services</a>
+            <ul class="sous-menu">
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Reservation</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
+        </div>
+      </nav>
+    </div>
+
+  </header>
     @yield('content')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <footer>
         <!-- TODO -->
     </footer>
