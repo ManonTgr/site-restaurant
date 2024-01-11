@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +25,7 @@
     <header>
     <div class="float">
       <div>
-        <a href="menu.html"><img src="images/O CNAMO(3).png" alt="Chemin de randonnée au milieu des montagnes"
+        <a href="menu.html"><img src="../images/O CNAMO(3).png" alt="Chemin de randonnée au milieu des montagnes"
             title="Cliquez pour agrandir"></a>
       </div>
       <div>
