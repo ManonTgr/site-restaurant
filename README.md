@@ -1,3 +1,15 @@
+## Projet de reviser Lara
+
+## exemple de requete avec jointure
+
+SELECT * 
+FROM `article` 
+INNER JOIN article_image ON article_image.article_id=article.id 
+INNER JOIN image ON image.id = article_image.image_id;
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
