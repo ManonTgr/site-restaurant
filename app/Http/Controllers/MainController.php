@@ -7,20 +7,16 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public function home()
-    {
-        $articles = Article::all();
-        dd($articles);
-        return view('home');
-    }
-
-    public function menu()
-    {
-        $categories = ['Petit déjeuner', 'Entrées', 'Plats', 'Desserts', 'Boissons'];
-
-        return view('menu', [
-            // variables qui peuvent être utilisées dans le template
-            'categories' => $categories,
+    
+        public function home() {
+            $articles = Article::orderBy('titre')->get();
+            $article11 = Article::find(11);
+           // $article11Images = $article11->images()->get();
+    
+            return view('home', [
+                'articles' => $articles,
+                'article11' => $article11,
+               // 'article11Images' => $article11Images,
         ]);
     }
 }
