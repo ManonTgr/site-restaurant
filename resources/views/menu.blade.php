@@ -1,23 +1,38 @@
 @extends('base')
-
-@section('title', 'Menu')
-
-@section('content')
     <section>
-        <h2>Menu</h2>
-        @foreach ($categories as $categorie)
-        <div>
-            <h3>{{ $categorie }}</h3>
-            <ul class="plats">
-                @for ($i = 0; $i < 5; $i++)
-                <li>
-                    <img src="/images/ca-creative-bpPTlXWTOvg-unsplash.jpg" alt="verdura e carne sulla ciotola" />
-                    <h4>Lorem ipsum dolor</h4>
-                    <span class="prix">9,99 eur</span>
-                </li>
-                @endfor
-            </ul>
-        </div>
-        @endforeach
+      <nav>
+        <ul>
+              <li><a href="#">Acceuil</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Réservation</a></li>
+              <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
     </section>
-@endsection
+    <p> test </p>
+    <br> 
+    <p> test </p>
+    <section>
+  <h2>Menu</h2>
+  @foreach ($categories as $categories)
+  <div>
+      <h3>{{$categories}}</h3>
+      <ul class="plats">
+          @foreach ($categorie->plats( as $plat)) 
+          <li> 
+            <img src="{{ asset(images/).
+            $plat->fichier) }}" alt="{{
+            $plat->titre}}"/>
+            <span class="prix">{{ $plats->prix}}
+              eur</span>
+          </li>
+          @endforeach
+      </ul>
+  </div>
+  @endforeach
+</section>
+    <footer>
+      <!-- TODO -->
+    </footer>
+  </body>
+</html>

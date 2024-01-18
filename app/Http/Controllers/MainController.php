@@ -19,4 +19,12 @@ class MainController extends Controller
                // 'article11Images' => $article11Images,
         ]);
     }
+
+    public function menu() {
+        $categories = Categories::all();
+        
+        return view('menu', [
+            'categories' =>$categories,
+    ]);
+}
 }
