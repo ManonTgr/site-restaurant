@@ -1,64 +1,30 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link href="css/app.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{ config('app.name') }} - @yield('title')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"defer></script>
-
-  </head>
-
+    
+    <title> {{ config('app.name') }} -@section('title')@endsection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous" defer></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @show
+
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li>
-                    <a href="{{ route('main.home') }}">Accueil</a>
-                </li>
-                <li>
-                    <a href="{{ route('main.menu') }}">Menu</a>
-                </li>
+                  <li><a href="{{route('main.home')}}">Acceuil</a></li>
+                  <li><a href="{{route('main.menu')}}">Menu</a></li>
+                  <li><a href="#">Réservation</a></li>
+                  <li><a href="#">Contact</a></li>
             </ul>
-        </nav>
+          </nav>
     </header>
-*/test/*
-
-    <header>
-    <div class="float">
-      <div>
-        <a href="menu.html"><img src="../images/O CNAMO(3).png" alt="Chemin de randonnée au milieu des montagnes"
-            title="Cliquez pour agrandir"></a>
-      </div>
-      <div>
-        <h2>O Cnamo </h2>
-      </div>
-
-      <nav>
-        <div class="profil">
-        <ul>
-          <li class="menu-deroulant">
-            <a href="#">Services</a>
-            <ul class="sous-menu">
-              <li><a href="#">Menu</a></li>
-              <li><a href="#">Reservation</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </li>
-        </ul>
-        </div>
-      </nav>
-    </div>
-
-  </header>
     @yield('content')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <footer>
-        <!-- TODO -->
+        <!-- TODO --> 
     </footer>
 </body>
 </html>

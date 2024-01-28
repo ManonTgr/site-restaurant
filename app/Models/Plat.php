@@ -17,7 +17,7 @@ class Plat extends Model
 
     {
         return $this
-        ->belongsTo(Bar::class, 'categories_id', 'id')
+        ->belongsToMany(Etiquette::class, 'etiquettes_plats', 'plats_id', 'etiquettes_id')
         ->get();
     }
 }

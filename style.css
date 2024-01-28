@@ -1,8 +1,13 @@
 
+*{
+    text-align: none;
+    margin: 0px;
+    padding: 0px;
+}
 body { 
     margin: 0px;
     padding: 0px;
-    background-image: url(images/keesha-s-kitchen-eaSIzdS8pv0-unsplash.jpg);
+    background-image: url(public/images/keesha-s-kitchen-eaSIzdS8pv0-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -45,10 +50,20 @@ h2 {
 .profil {
 
     background-color: #131310;
+    
     display: inline-block;
-    margin-right: 100px;
-    padding: 0%;
-    justify-content: center;
+    
+}
+
+.profil ul {
+    display: flex;
+    margin-right: 20px;
+}
+.box{
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .plats {
@@ -66,3 +81,4 @@ h2 {
 
 .plats h4 {
     display: inline-block;}
+
