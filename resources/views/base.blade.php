@@ -13,15 +13,35 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                  <li><a href="{{route('main.home')}}">Acceuil</a></li>
-                  <li><a href="{{route('main.menu')}}">Menu</a></li>
-                  <li><a href="#">Réservation</a></li>
-                  <li><a href="#">Contact</a></li>
-            </ul>
-          </nav>
+        <div class="header-content">
+            <div>
+                <img class="OCNAMO" alt="Chemin de randonnée au milieu des montagnes" title="Cliquez pour agrandir">
+            </div><p class="titre"><i>~~ O CNAMO ~~</i></p>
+            <nav>
+                <ul>
+                    
+                    <div class="acceuil">
+                    <li>
+                        <a href="{{ route('main.home') }}">Accueil</a>
+                    </li></div>
+                    <div class="menu">
+                    <li>
+                        <a href="{{ route('main.menu') }}">Menu</a>
+                    </li></div>
+                    <div class="reservation">
+                    <li>
+                        <a href="{{ route('main.reservation.store') }}">Réservation</a>
+                    </li></div>
+                    <div class="contact">
+                    <li>
+                        <a href="{{ route('main.reservation.store') }}">Contact</a>
+                    </li></div>
+                </ul>
+            </nav>
+        </div>
     </header>
+    
+    
     @yield('content')
     <footer>
         <!-- TODO --> 

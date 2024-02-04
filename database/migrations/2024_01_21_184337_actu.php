@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('actus', function (Blueprint $table) {
+        Schema::create('actu', function (Blueprint $table) {
             $table->id();
             $table->text('contenu');
             $table->dateTime('date_publication');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('actus');
+        Schema::dropIfExists('actu');
     }
 };

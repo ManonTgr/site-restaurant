@@ -1,25 +1,127 @@
+
+
+header {
+    background: linear-gradient(to right, rgb(13, 12, 12), rgb(30, 29, 29), rgb(88, 50, 25)); /* Dégradé de couleur */
+    opacity: 0.97;
+    width: 100%; /* Largeur de l'en-tête à 100% */ /* Augmenter la largeur de l'en-tête à 100% */
+    padding: 50px; /* Ajouter un padding pour distancer le contenu de l'en-tête */
+}
+
+
+.img .OCNAMO{
+    background-image: url('../../public/images/OCNAMO.png');
+    width: 50px;
+    height: 50px;
+}
+@font-face {
+        font-family: 'InitialsWithACurl.ttf';
+        src: url('../views/InitialsWithACurl.ttf') format('truetype'); /* Ajoutez "format('truetype')" */
+
+        font-family: 'KGSoItGoes.ttf';
+        src: url('../views/KGSoItGoes.ttf') format('truetype'); /* Ajoutez "format('truetype')" */
+}
+
+.titre {
+    margin-left: 150px;
+    font-size: 90px;
+    font-family: 'arial', sans-serif; /* Utilisez la police téléchargée */
+    background-image: linear-gradient(to right, rgb(113, 189, 51), rgb(186, 170, 139), rgb(194, 3, 3)); /* Dégradé de couleur */
+    -webkit-background-clip: text; /* Appliquer le dégradé au texte */
+    background-clip: text; /* Appliquer le dégradé au texte */
+    color: transparent; 
+}
+
+    
+.acceuil, .menu, .reservation, .contact{
+    display: inline-block;
+    font-size: large;
+    margin-right: 40px; /* Espacement entre les éléments du menu */
+
+}
+
+.float{
+    display: flex;
+    max-width: 80%; /* Limiter la largeur du contenu flottant à 80% */
+    margin: 0 auto; 
+    
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content nav {
+        margin-left: auto; /* Cela pousse la navigation à droite */
+        }
+img {
+    vertical-align: middle;
+    width : 140px;
+    height : 140px;
+    background-repeat: no repeat no-repeat;
+}
+h2{
+    
+    margin-left: 20%;
+}
+
+nav ul {list-style-type: none;}  /*pas de puce devant les listes*/
+
+h2 {
+    
+    float: center;
+    color: antiquewhite;
+    text-align: center;
+}
+.profil {
+    
+    background-color: #131310;
+    
+    display: inline-block;
+    
+}
+
+.profil ul {
+    display: flex;
+    margin-right: 20px;
+}
+.box{
+    
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
 body { 
     margin: 0px;
     padding: 0px;
-    background-color: aquamarine;
     background-image: url(../../public/images/keesha-s-kitchen-eaSIzdS8pv0-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 100%;
+    color: rgb(255, 255, 255);
 }
 
 .plats {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
 .plats img {
-    width: 100px;
+
+    width: 150px;
     height: auto;
 }
 
 .plats h4 {
-    display: inline;
+    display: inline-block;}
+
+h1{
+    text-align: center;
+    margin-top: 180px;
+    font-size: 120px;
+    font-family: 'InitialsWithACurl.ttf', sans-serif;
+    text-shadow: 7px 7px 0 black;
 }

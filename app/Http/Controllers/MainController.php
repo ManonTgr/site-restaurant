@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\Models\Actu;
 use App\Models\Categorie;
 use App\Models\Plat;
+use App\Models\Reservation;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -27,10 +28,10 @@ class MainController extends Controller
 
     public function home()
     {
-        $actus = Actu::all();
+        $actu = Actu::all();
 
         return view('home', [
-            'actus' => $actus,
+            'actu' => $actu,
         ]);
     }
 
@@ -64,6 +65,7 @@ class MainController extends Controller
 
     public function reservationStore(Request $request)
     {
+        // dd($request->all());
         $heures = implode(',', $this->heures);
 
         $validated = $request->validate([
@@ -71,8 +73,8 @@ class MainController extends Controller
             'couverts' => 'required|numeric|gte:1|lte:16',
             'heure' => "required|in:{$heures}",
             'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
-            'telephone' => 'required',
-            'commentaires' => '',
+            'telephone' => 'required|min:10|max:10',
+            'commentaires' => 'min:10|max:1000',
 
         ]);
 

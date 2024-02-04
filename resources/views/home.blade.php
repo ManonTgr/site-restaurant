@@ -3,9 +3,12 @@
 @section('title', 'Accueil')
 
 @section('content')
-<h1>Hello Laravel!</h1>
+<h1>Régalez vous chez 
+    <br>
+    O CnAmO !
+</h1>
 <ul>
-    @foreach ($actus as $actu)
+    @foreach ($actu as $actu)
         <li>{{ $actu->contenu }} ({{ $actu->date_publication }})</li>
     @endforeach
 </ul>
