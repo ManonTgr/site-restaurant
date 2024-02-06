@@ -3,9 +3,10 @@
 @section('title', 'Accueil')
 
 @section('content')
-<h1>Régalez vous chez 
+<h1>Découvrez les saveurs 
     <br>
-    O CnAmO !
+    du Cameroun 
+    <br>chez O CnAmO !
 </h1>
 <ul>
     @foreach ($actu as $actu)

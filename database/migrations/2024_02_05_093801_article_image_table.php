@@ -11,10 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('article_image', function (Blueprint $table) {
-            $table->foreignId('article_id')->references('id')->on('article');
-            $table->foreignId('image_id')->references('id')->on('image');
-        });
+        //
     }
 
     /**
@@ -22,6 +19,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('article_image');
+        //
     }
 };

@@ -17,7 +17,7 @@ class Plat extends Model
     public function categorie()
     {
         return $this
-            ->belongsTo(Categorie::class, 'categories_id', 'id')
+            ->belongsTo(Categorie::class, 'categorie_id', 'id')
             ->get();
     }
 
