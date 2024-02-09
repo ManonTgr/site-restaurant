@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 
 header {
@@ -136,5 +139,6 @@ h1{
 }
 
 .plats{
-    color: a;
+    color: rgb(142, 162, 8);
+    text-align: center;
 }
