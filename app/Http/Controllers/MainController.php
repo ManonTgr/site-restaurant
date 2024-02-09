@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Actu;
 use App\Models\Categorie;
 use App\Models\Plat;
@@ -19,7 +18,6 @@ class MainController extends Controller
         '13:30:00' => '13:30',
 
         // créneaux du soir
-
         '20:00:00' => '20:00',
         '20:30:00' => '20:30',
         '21:00:00' => '21:00',
@@ -28,10 +26,10 @@ class MainController extends Controller
 
     public function home()
     {
-        $actu = Actu::all();
+        $actus = Actu::all();
 
         return view('home', [
-            'actu' => $actu,
+            'actus' => $actus,
         ]);
     }
 
@@ -43,9 +41,8 @@ class MainController extends Controller
             // variables qui peuvent être utilisées dans le template
             'categories' => $categories,
         ]);
-
-
     }
+
     public function plat(int $id)
     {
         $plat = Plat::find($id);
@@ -58,14 +55,12 @@ class MainController extends Controller
     public function reservation()
     {
         return view('reservation', [
-            'heures' => $this->heures
+            'heures' => $this->heures,
         ]);
     }
 
-
     public function reservationStore(Request $request)
     {
-        // dd($request->all());
         $heures = implode(',', $this->heures);
 
         $validated = $request->validate([
@@ -74,10 +69,25 @@ class MainController extends Controller
             'heure' => "required|in:{$heures}",
             'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
             'telephone' => 'required|min:10|max:10',
-            'commentaires' => 'min:10|max:1000',
-
+            'commentaires' => 'nullable|min:10|max:1000',
         ]);
 
-        dd($validated);
+        $reservation = new Reservation();
+        $reservation->nom = $validated['nom'];
+        $reservation->couverts = $validated['couverts'];
+        $reservation->heure = $validated['heure'];
+        $reservation->jour = $validated['jour'];
+        $reservation->telephone = $validated['telephone'];
+        $reservation->commentaires = $validated['commentaires'];
+
+        $reservation->save();
+
+        return view('reservationStore', [
+            'reservation' => $reservation,
+        ]);
     }
+
+    // /admin/reservation
+
+ 
 }

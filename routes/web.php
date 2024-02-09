@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminReservationController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProfileController;
+use Doctrine\DBAL\Logging\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,14 +29,26 @@ Route::post('/reservation', [MainController::class, 'reservationStore'])->name('
                //url//                                    //fonction//
         //post c'est pour traiter les données et get les afficher//
 
-        Route::get('/dashboard', function () {
+Route::get('/admin/reservation', [AdminReservationController::class,'Index'])->middleware('auth')->name('admin.reservation.index');
+
+Route::get('/admin/reservation/{id}', [AdminReservationController::class,'Show'])->middleware('auth')->name('admin.reservation.show');
+
+Route::get('/admin/reservation/{id}/edit', [AdminReservationController::class,'edit'])->middleware('auth')->name('admin.reservation.edit');
+
+Route::put('/admin/reservation/{id}', [AdminReservationController::class,'update'])->middleware('auth')->name('admin.reservation.update');
+
+
+
+// Middleware('auth') protéger par mot de passe
+
+Route::get('/dashboard', function () {
               return view('dashboard');
           })->middleware(['auth', 'verified'])->name('dashboard');
           
-          Route::middleware('auth')->group(function () {
-              Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-              Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-              Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+Route::middleware('auth')->group(function () {
+Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
           });
           
           require __DIR__.'/auth.php';

@@ -1,6 +1,6 @@
-insert into etiquettes (id, nom) values (1, 'utaaa');
-insert into etiquettes (id, nom) values (2, 'cursus');
-insert into etiquettes (id, nom) values (3, 'etaaa');
+insert into etiquettes (id, nom) values (1, 'végétarien');
+insert into etiquettes (id, nom) values (2, 'viande');
+insert into etiquettes (id, nom) values (3, 'poisson');
 insert into etiquettes (id, nom) values (4, 'eleifend');
 insert into etiquettes (id, nom) values (5, 'magna');
 insert into etiquettes (id, nom) values (6, 'ornare');

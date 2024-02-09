@@ -9,7 +9,7 @@
     <br>chez O CnAmO !
 </h1>
 <ul>
-    @foreach ($actu as $actu)
+    @foreach ($actus as $actu)
         <li>{{ $actu->contenu }} ({{ $actu->date_publication }})</li>
     @endforeach
 </ul>

@@ -1,6 +1,8 @@
  
 @extends('base')
 
+
+<div id="resa"></div>
 @php // pour integrer un tableau php car il ne peut pas etre ecrit directement dans le blade//
 
 $heures = [
@@ -21,7 +23,8 @@ $heures = [
 @endphp
 
 @section('content')
-<section>
+<section class="reservation-container">
+  <div class="reservation-section">
     <h2>Réservation</h2>
     
   {{-- <div>
@@ -35,7 +38,7 @@ $heures = [
         <div>
           <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
           <label for="nom">Nom</label>
-          <input type="text" name="nom" id="" min="3" max="100" value ="{{ old('nom')}}" required>
+          <input type="text" name="nom" id="" min="3" max="100" value ="{{ old('nom')}}" not-required style="color: black;">
           @error('nom')
         <div class="invalid-feedback"> {{ $message}}
         </div>
@@ -46,7 +49,7 @@ $heures = [
         <div>
             <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
             <label for="couverts">Nombre de couverts</label>
-            <input type="number" name="couverts" id="couverts" min="1" max="16"value ="{{ old('couverts')}}" required>
+            <input type="number" name="couverts" id="couverts" min="1" max="16"value ="{{ old('couverts')}}"  not-required style="color: black;">
           @error('couverts')
             <div class="invalid-feedback">{{ $message}}</div>
           @enderror <!-- texte sur une seule ligne-->
@@ -55,11 +58,9 @@ $heures = [
             <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
               <label for="heure">Heure</label>
 
-            {{-- <input type="time" name="heure" id="heure" required> <!-- texte sur une seule ligne--> --}}
-              <select name="heure" id="heure" required>
-
+            {{-- <input type="time" name="heure" id="heure" not-required> <!-- texte sur une seule ligne--> --}}
+              <select name="heure" id="heure" not-required style="color: black;">
               {{-- créneau du midi --}}
-
               <option value=""></option>
            @foreach ($heures as $heure )
               <option value="{{ $heure }}"
@@ -75,7 +76,7 @@ $heures = [
           <div>
             <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
             <label for="jour">Jour</label>
-            <input type="date" name="jour" id="jour" min="{{ date('Y-m-d')}}" value ="{{ old('jour')}}" required> 
+            <input type="date" name="jour" id="jour" min="{{ date('Y-m-d')}}" value ="{{ old('jour')}}" not-required style="color: black;"> 
             <!-- texte sur une seule ligne-->
                
           @error('jour')<div class="invalid-feedback">{{ $message}}</div><!-- texte sur une seule ligne-->
@@ -85,7 +86,7 @@ $heures = [
           <div>
             <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
             <label for="telephone">Numéro de téléphone</label>
-            <input type="phone" name="telephone" id="telephone" value ="{{ old('telephone')}}" placeholder="Format: 0600000000"> 
+            <input type="phone" name="telephone" id="telephone" value ="{{ old('telephone')}}" placeholder="Format: 0600000000" style="color: black;"> 
             
           @error('telephone')<div class="invalid-feedback">{{ $message}}</div><!-- texte sur une seule ligne-->
           </div>*
@@ -93,7 +94,7 @@ $heures = [
           <div>
             <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
             <label for="commentaire"></label>
-            <textarea name="commentaire" id="commentaire" cols="30" rows="10">{{ old('commentaire') }}</textarea>
+            <textarea name="commentaire" id="commentaire" cols="30" rows="10" style="color: black;">{{ old('commentaire') }}</textarea>
              <!-- texte sur une seule ligne-->
              @error('commentaire')
              <div class="invalid-feedback">{{ $message}}</div>
@@ -102,5 +103,7 @@ $heures = [
           <div>
             <button type="submit"> Réserver</button>
     </form>
+          </div>
 </section>
 @endsection
+</div>

@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+
 
 
 header {
@@ -34,12 +32,15 @@ header {
     color: transparent; 
 }
 
-    
+nav a {
+    color: white;
+    text-decoration: none;
+}    
+
 .acceuil, .menu, .reservation, .contact{
     display: inline-block;
     font-size: large;
     margin-right: 40px; /* Espacement entre les éléments du menu */
-
 }
 
 .float{
@@ -102,7 +103,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-size: 100%;
-    color: rgb(255, 255, 255);
+    color: rgb(242, 246, 243);
     background-color: #131310;
 }
 
@@ -135,10 +136,32 @@ h1{
 }
 
  ul .lienplat{
-    color: brown;
+    color: white;
 }
 
 .plats{
-    color: rgb(142, 162, 8);
+    color: rgb(245, 249, 225);
     text-align: center;
+}
+
+#resa{
+    color: rgb(229, 204, 204);
+}
+
+.reservation-container {
+    
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100vh; /* Hauteur de la section égale à la hauteur de la fenêtre */
+}
+
+.reservation-section {
+    border: 2px solid black; /* Bordure noire */
+    padding: 20px; /* Espacement interne pour que le texte ne touche pas la bordure */
+    background-color: #131310;
+}
+
+.menuforme{
+    background: linear-gradient(to right,rgb(34, 32, 32), rgb(48, 46, 43), rgb(93, 84, 77),rgb(180, 178, 177));
 }
