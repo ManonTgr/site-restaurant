@@ -15,6 +15,7 @@
 
     <form action="{{ route('admin.reservation.update', ['id'=>$reservation->id])}}" method="post"> 
       @csrf
+      @method('PUT')
         <div>
           <!--  <textarea name="" id="" cols="" rows="10"></textarea>--> <!-- texte sur plusieurs lignes-->
           <label for="nom">Nom</label>

@@ -1,4 +1,6 @@
-
+.invalid-feedback{
+    display: block;
+}
 
 
 header {
@@ -163,5 +165,37 @@ h1{
 }
 
 .menuforme{
-    background: linear-gradient(to right,rgb(34, 32, 32), rgb(48, 46, 43), rgb(93, 84, 77),rgb(180, 178, 177));
+    background: linear-gradient(to right,rgb(53, 67, 54), rgb(47, 128, 67), rgb(107, 63, 67),rgb(192, 167, 88));
+}
+
+.menuforme h2 {
+    text-align: center; /* Centre le titre */
+    margin-right: 400px;
+    border: 12px inset rgb(38, 31, 31); /* Ajoute une bordure de 2 pixels de largeur solide et noire */
+    padding: 11px 15px; 
+    background-image: linear-gradient(to right, #261f1f, #454338);
+}
+
+.menuforme .categ {
+    text-align: center; /* Alignement à gauche pour les catégories */
+    margin-left: 50px; /* Centrer horizontalement le contenu */
+    margin-right: auto; /* Centrer horizontalement le contenu */
+
+    
+}
+
+h3{
+    text-align: center;
+    font-family: 'InitialsWithACurl.ttf', sans-serif;
+    font-size: 40px;
+    border: 12px groove rgb(38, 31, 31); /* Ajoute une bordure de 2 pixels de largeur solide et noire */
+    width: fit-content;
+    padding: 10px;
+}
+
+.footer{
+    width: 100%;
+    background-color: #131310;
+    text-align: center;
+    height: 30px;
 }

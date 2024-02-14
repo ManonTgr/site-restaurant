@@ -4,12 +4,18 @@
 
 @section('content')
     <section class="menuforme">
+        <br><br><br>
+        <br>
+        <br>
         <h2>Menu</h2>
         @foreach ($categories as $categorie)
-        <div>
+        <div class="categ">
+            <br>
             <h3>{{ $categorie->nom }}</h3>
-            <ul class="plats">
+            <br><br>
+            <ul class="plats"><br>
                 @foreach ($categorie->plats() as $plat)
+                <br><br>
                 <li>
                     <img src="{{ asset('images/'.$plat->fichier) }}" alt="{{ $plat->nom }}" />
                     <h4>{{ $plat->nom }}</h4>

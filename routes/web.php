@@ -37,6 +37,8 @@ Route::get('/admin/reservation/{id}/edit', [AdminReservationController::class,'e
 
 Route::put('/admin/reservation/{id}', [AdminReservationController::class,'update'])->middleware('auth')->name('admin.reservation.update');
 
+Route::delete('/admin/reservation/{id}', [AdminReservationController::class,'delete'])->middleware('auth')->name('admin.reservation.delete');
+
 
 
 // Middleware('auth') protéger par mot de passe

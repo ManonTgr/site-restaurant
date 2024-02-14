@@ -24,7 +24,10 @@ class AdminReservationController extends Controller
     public function Index()
     {
         //Recuperer la liste des résa
+        $reservations=Reservation::all();
         //affiche un template
+        return view('admin.reservation.index',['reservations' =>$reservations]);
+
     }
     
     public function Show(Request $request)
@@ -43,5 +46,39 @@ class AdminReservationController extends Controller
         ]);
         
     }
-    
+
+    public function update(Request $request, $id)
+    {
+        $heures=implode(',',$this->heures);
+
+        $validated = $request->validate([
+            'nom' => 'required|min:3|max:50',
+            'couverts' => 'required|numeric|gte:1|lte:16',
+            'heure' => "required|in:{$heures}",
+            'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
+            'telephone' => 'required|min:10|max:10',
+            'commentaires' => 'nullable|min:10|max:1000',
+        ]);
+
+        $reservation = Reservation::find($id);
+        $reservation->nom = $validated['nom'];
+        $reservation->couverts = $validated['couverts'];
+        $reservation->heure = $validated['heure'];
+        $reservation->jour = $validated['jour'];
+        $reservation->telephone = $validated['telephone'];
+        $reservation->commentaires = $validated['commentaires'];
+
+        $reservation->save();
+
+        return redirect()->route('admin.reservation.show', [
+            'id'=> $reservation->id,
+        ]);
+
+    }
+    public function delete($id){
+        $reservation=Reservation::find($id);
+        $reservation->delete();
+
+        return redirect()->route('admin.reservation.index');
+    }
 }

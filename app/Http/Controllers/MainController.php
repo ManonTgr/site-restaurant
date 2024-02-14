@@ -69,7 +69,7 @@ class MainController extends Controller
             'heure' => "required|in:{$heures}",
             'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
             'telephone' => 'required|min:10|max:10',
-            'commentaires' => 'nullable|min:10|max:1000',
+            'commentaire' => 'nullable|min:10|max:1000',
         ]);
 
         $reservation = new Reservation();
@@ -78,7 +78,7 @@ class MainController extends Controller
         $reservation->heure = $validated['heure'];
         $reservation->jour = $validated['jour'];
         $reservation->telephone = $validated['telephone'];
-        $reservation->commentaires = $validated['commentaires'];
+        $reservation->commentaire = $validated['commentaire'];
 
         $reservation->save();
 

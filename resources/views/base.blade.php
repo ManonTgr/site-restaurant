@@ -44,7 +44,10 @@
     
     @yield('content')
     <footer>
-        <!-- TODO --> 
+        <div class="footer">
+            <a href="">Mentions Légal</a>
+            <a href="">Informations</a>
+        </div>
     </footer>
 </body>
 </html>
