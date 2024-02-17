@@ -81,4 +81,40 @@ class AdminReservationController extends Controller
 
         return redirect()->route('admin.reservation.index');
     }
+
+    public function create()
+    {
+        return view('admin.reservation.create', [
+            'heures' => $this->heures,
+        ]);
+    }
+
+    public function store(Request $request)
+    {
+        $heures = implode(',', $this->heures);
+
+        $validated = $request->validate([
+            'nom' => 'required|min:3|max:50',
+            'couverts' => 'required|numeric|gte:1|lte:16',
+            'heure' => "required|in:{$heures}",
+            'jour' => 'required|date|date_format:Y-m-d|after_or_equal:today',
+            'telephone' => 'required|min:10|max:10',
+            'commentaire' => 'nullable|min:10|max:1000',
+        ]);
+
+        $reservation = new Reservation();
+        $reservation->nom = $validated['nom'];
+        $reservation->couverts = $validated['couverts'];
+        $reservation->heure = $validated['heure'];
+        $reservation->jour = $validated['jour'];
+        $reservation->telephone = $validated['telephone'];
+        $reservation->commentaire = $validated['commentaire'];
+
+        $reservation->save();
+
+        return redirect()->route('admin.reservation.show', ['id' => $reservation->id]);
+
+       
+
+}
 }

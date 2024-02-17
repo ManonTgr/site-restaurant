@@ -1,3 +1,5 @@
 @extends('base')
 
-<p>Votre Réservation à bien été enregistrer</p>
+<div>
+    <h4>Votre réservation à bien été enregistrer</h4>
+</div>

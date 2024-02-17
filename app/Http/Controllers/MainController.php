@@ -6,6 +6,7 @@ use App\Models\Actu;
 use App\Models\Categorie;
 use App\Models\Plat;
 use App\Models\Reservation;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -88,6 +89,12 @@ class MainController extends Controller
     }
 
     // /admin/reservation
+
+    public function Contact()
+{
+    $contacts = Contact::all(); // Récupérer les contacts depuis la base de données
+    return view('contacts', ['Contact' => $contacts]);
+}
 
  
 }

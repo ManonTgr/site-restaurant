@@ -34,7 +34,7 @@
                     </li></div>
                     <div class="contact">
                     <li>
-                        <a href="{{ route('main.reservation.store') }}">Contact</a>
+                        <a href="{{ route('main.contact') }}">Contact</a>
                     </li></div>
                 </ul>
             </nav>
@@ -43,6 +43,7 @@
     
     
     @yield('content')
+    <br>
     <footer>
         <div class="footer">
             <a href="">Mentions Légal</a>

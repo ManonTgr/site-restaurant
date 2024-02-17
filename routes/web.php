@@ -23,6 +23,8 @@ Route::get('/menu', [MainController::class, 'menu'])->name('main.menu');
 
 Route::get('/plat/{id}', [MainController::class, 'plat'])->name('main.plat');
 
+Route::get('/contact', [MainController::class,'Contact'])->name('main.contact');
+
 Route::get('/reservation', [MainController::class, 'reservation'])->name('main.reservation');
 
 Route::post('/reservation', [MainController::class, 'reservationStore'])->name('main.reservation.store');
@@ -30,6 +32,10 @@ Route::post('/reservation', [MainController::class, 'reservationStore'])->name('
         //post c'est pour traiter les données et get les afficher//
 
 Route::get('/admin/reservation', [AdminReservationController::class,'Index'])->middleware('auth')->name('admin.reservation.index');
+
+Route::get('/admin/reservation/create', [AdminReservationController::class,'create'])->middleware('auth')->name('admin.reservation.create');
+
+Route::post('/admin/reservation', [AdminReservationController::class,'store'])->middleware('auth')->name('admin.reservation.store');
 
 Route::get('/admin/reservation/{id}', [AdminReservationController::class,'Show'])->middleware('auth')->name('admin.reservation.show');
 

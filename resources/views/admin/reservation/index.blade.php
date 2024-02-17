@@ -5,6 +5,9 @@
 @section('content')
 <section>
     <h2>Admin - Réservation - Index</h2>
+    <div>
+        <a href="{{ route('admin.reservation.create')}}">Créer une reservation</a>
+    </div>
 
     <table>
         <tr>

@@ -1,0 +1,1 @@
+insert into contacts (id, adresse, numTel, horaire) values (1, '8 BD Louis XIV, 59044 Lille', '03 20 07 34 09', '19h-20h');

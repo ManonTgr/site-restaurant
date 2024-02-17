@@ -198,4 +198,10 @@ h3{
     background-color: #131310;
     text-align: center;
     height: 30px;
+    margin: 0%;
+    padding: 0%;
+}
+
+.reservation-container{
+    background: linear-gradient(to right,rgb(53, 67, 54), rgb(47, 128, 67), rgb(107, 63, 67),rgb(192, 167, 88));
 }

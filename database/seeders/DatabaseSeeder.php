@@ -25,6 +25,9 @@ class DatabaseSeeder extends Seeder
         $sql = file_get_contents(__DIR__.'/etiquettes_plats.sql');
         DB::unprepared($sql);
 
+        $sql = file_get_contents(__DIR__.'/contacts.sql');
+        DB::unprepared($sql);
+
         $sql = file_get_contents(__DIR__.'/users.sql');
         DB::unprepared($sql);
     }
