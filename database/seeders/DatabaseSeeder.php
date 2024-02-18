@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $sql = file_get_contents(__DIR__.'/actu.sql');
+        DB::unprepared($sql);
+
         $sql = file_get_contents(__DIR__.'/categorie.sql');
         DB::unprepared($sql);
 

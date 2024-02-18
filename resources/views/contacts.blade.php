@@ -1,12 +1,18 @@
+
 @extends('base')
 
 @section('content')
-<h1>Formulaire de contact
-</h1>
+<section class="pagecontact">
+<h2>Formulaire de contact
+</h2>
+
+
 <ul>
     @foreach ($Contact as $contacts)
         <li>{{ $contacts->adresse }}</li>
         <li>({{ $contacts->numTel }})</li>
+        <li>({{ $contacts->horaire }})</li>
     @endforeach
 </ul>
+</section>
 @endsection

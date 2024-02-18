@@ -43,7 +43,6 @@
     
     
     @yield('content')
-    <br>
     <footer>
         <div class="footer">
             <a href="">Mentions Légal</a>
