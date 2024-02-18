@@ -5,8 +5,7 @@
 <section class="pagecontact">
 <h2>Formulaire de contact
 </h2>
-
-
+<br><br><br><br>
 <ul>
     @foreach ($Contact as $contacts)
         <li>{{ $contacts->adresse }}</li>
