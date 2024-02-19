@@ -250,11 +250,14 @@ h3{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    margin-bottom: 1000px;
+    
 }
 
 .lareservation h4 {
     color: #f7e8e8;
     font-size: 24px;
+    
 }
 
 .espace{
@@ -273,4 +276,29 @@ h3{
     font-size: 50px;
     text-align: center;
     
+}
+
+
+.map{
+    height: 500px;
+    width: auto;
+}
+
+.contacttitre{
+    text-align: center;
+    margin-right: 350px;
+    border: 5px solid rgb(237, 233, 233); /* Définir l'épaisseur et la couleur de la bordure */
+    padding: 15px; /* Ajouter un espace intérieur pour améliorer l'apparence */
+    width: fit-content; /* Adapter la largeur du rectangle au contenu */
+    display: inline-block;
+}
+
+.pagecontact li{
+    list-style: none;
+    
+}
+
+
+.reservationst{
+    margin-bottom: -200px;
 }

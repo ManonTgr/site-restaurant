@@ -3,15 +3,21 @@
 
 @section('content')
 <section class="pagecontact">
-<h2>Formulaire de contact
+    <br><br>
+<h2 class="contacttitre">Formulaire de contact
 </h2>
-<br><br><br><br>
+<br><br>
 <ul>
     @foreach ($Contact as $contacts)
         <li>{{ $contacts->adresse }}</li>
-        <li>({{ $contacts->numTel }})</li>
-        <li>({{ $contacts->horaire }})</li>
+        <br>
+        <li>{{ $contacts->numTel }}</li>
+        <br>
+        <li>{{ $contacts->horaire }}</li>
+        
     @endforeach
+    <br><br>
+    <img src="/images/map.png" class="map">
 </ul>
 </section>
 @endsection
