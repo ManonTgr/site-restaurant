@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('adresse');
             $table->string('numTel');
             $table->string('horaire');
+            $table->string('dest');
         });
     }
 
